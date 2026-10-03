@@ -6,7 +6,8 @@ import {
   CheckCircle2, Headphones, Rewind, FastForward 
 } from 'lucide-react';
 
-const socket = io('http://localhost:3001');
+const API_URL = import.meta.env.VITE_API_URL || 'https://projeto-stems-2.onrender.com';
+const socket = io(API_URL);
 
 export default function App() {
   const [url, setUrl] = useState('');
