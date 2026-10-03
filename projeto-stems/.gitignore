@@ -1,0 +1,63 @@
+# ==========================================
+# 1. Dependências e Ambientes Virtuais
+# ==========================================
+node_modules/
+/venv/
+venv/
+ENV/
+env/
+.venv/
+
+# ==========================================
+# 2. Ficheiros Gerados e Ficheiros Temporários de Áudio
+# ==========================================
+# Ignora áudios descarregados e faixas geradas pelo Demucs
+public/
+downloads/
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+
+# ==========================================
+# 3. Builds de Produção e Caches do Frontend
+# ==========================================
+dist/
+build/
+.output/
+.vite/
+.cache/
+
+# ==========================================
+# 4. Logs e Ficheiros de Execução
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# 5. Ficheiros de Configuração Local e Variáveis de Ambiente
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# ==========================================
+# 6. Cache do Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# ==========================================
+# 7. Ficheiros do Sistema Operativo e Editores
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
