@@ -25,10 +25,14 @@ app.post('/api/separate', async (req, res) => {
   res.json({ jobId });
 
   try {
-    await axios.post('http://localhost:8000/process', {
+
+    const PYTHON_API_URL = process.env.PYTHON_API_URL || 'http://localhost:8000';
+    const BACKEND_URL = process.env.RENDER_EXTERNAL_URL || 'https://projeto-stems-2.onrender.com';
+
+    await axios.post(`${PYTHON_API_URL}/process`, {
       job_id: jobId,
       youtube_url: youtubeUrl,
-      callback_url: 'http://localhost:3001/api/callback',
+      callback_url: `${BACKEND_URL}/api/callback`,
       stem_count: stemCount || 4 // Passa para o Python (4 é o padrão)
     });
   } catch (err) {
