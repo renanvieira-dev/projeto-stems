@@ -6,3 +6,4 @@ demucs
 numpy
 yt-dlp
 python-multipart
+requests
