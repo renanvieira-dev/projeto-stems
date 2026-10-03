@@ -45,7 +45,9 @@ export default function App() {
     setStems(null);
 
     try {
-      const response = await fetch('http://localhost:3001/api/separate', {
+      const API_URL = import.meta.env.VITE_API_URL || 'https://projeto-stems-2.onrender.com';
+
+      const response = await fetch(`${API_URL}/api/separate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ youtubeUrl: url, stemCount })
@@ -176,6 +178,8 @@ function MultiTrackPlayer({ stems }) {
         wavesurferInstances.current[track.id].destroy();
       }
 
+      const API_URL = import.meta.env.VITE_API_URL || 'https://projeto-stems-2.onrender.com';
+
       const ws = WaveSurfer.create({
         container: trackRefs.current[track.id],
         waveColor: '#334155',
@@ -183,7 +187,7 @@ function MultiTrackPlayer({ stems }) {
         height: 60,
         barWidth: 2,
         barGap: 1,
-        url: `http://localhost:3001${stems[track.id]}`
+        url: `${API_URL}${stems[track.id]}`
       });
 
       wavesurferInstances.current[track.id] = ws;
