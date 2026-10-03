@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "autoprefixer": "^10.6.1",
+    "lucide-react": "^1.51.0",
+    "postcss": "^8.5.28",
+    "socket.io-client": "^4.8.4",
+    "tailwindcss": "^4.3.3",
+    "wavesurfer.js": "^8.0.1"
+  }
+}
